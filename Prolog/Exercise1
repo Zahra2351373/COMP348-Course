@@ -47,3 +47,8 @@ is_father(X) :- father(X, _).
 is_mother(X) :- mother(X, _).
 get_all_fathers(Set) :- findall(F, father(F, _), Lst),
  list_to_set(Lst, Set).
+qualifies_for_benefits(P) :-
+ woman(P),
+ findall(P, parent(P, _), L),
+ length(L, N),
+ N >= 3.
