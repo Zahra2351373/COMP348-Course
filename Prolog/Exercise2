@@ -9,6 +9,16 @@ parent(sam,bill).
 woman(tina).
 womman(sally).
 man(fred).
+man(peter).
 
 mother(X,Y) :- parent(X,Y),
     woman(X).
+
+brother(X,Y) :- parent(Z,X),
+    parent(Z,Y),
+    man(X),
+    X \= Y.
+
+uncle(X,Y) :- brother(X,Z),
+    parent(Z,Y),
+    man(X).
