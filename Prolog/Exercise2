@@ -1,0 +1,14 @@
+parent(fred,sally).
+parent(tina,sally).
+parent(fred,peter).
+parent(tina,peter).
+parent(sally,john).
+parent(sally,diane).
+parent(sam,bill).
+
+woman(tina).
+womman(sally).
+man(fred).
+
+mother(X,Y) :- parent(X,Y),
+    woman(X).
