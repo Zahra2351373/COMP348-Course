@@ -1,0 +1,14 @@
+or(0,0,0).
+or(0,1,1).
+or(1,0,1).
+or(1,1,1).
+
+xor(0,0,0).
+xor(0,1,1).
+xor(1,0,1).
+xor(1,1,0).
+
+invertor(0,1).
+invertor(1,0).
+
+circuit(X,Y,Z,F) :- or(X,Y,A), xor(Y,Z,B), invertor(X,C), or(B,C,D), xor(A,D,F).
