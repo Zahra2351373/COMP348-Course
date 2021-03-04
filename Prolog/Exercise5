@@ -1,0 +1,8 @@
+member(X, [X|_]).
+member(X, [_|T]) :- member(X, T).
+
+last(L, [L]).
+last(L, [H|T]) :- last(L, T).
+
+size([],0).
+size([H|T],N) :- size(T,N1), N is N1+1.
