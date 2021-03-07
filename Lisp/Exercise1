@@ -57,3 +57,5 @@
 (print (length (list '() '() '()))) 
 (print (length (append '() '() '()))) 
 (print (length (cons '() '())))
+(print(listp '(a b c)) )
+(print(listp 7) )
