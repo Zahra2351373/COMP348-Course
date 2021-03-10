@@ -1,0 +1,113 @@
+; Recursive 1
+; f (0) = h0i.
+; f (n) = cons(n, f (n − 1)), for n > 0.
+
+(defun bsequence (n)
+    (if (= n 0)
+        (cons 0 '())
+        (cons n (bsequence(- n 1)))))
+
+(print(bsequence 3))
+
+; Recursive 2
+; Consider function append2 which takes as its arguments two lists lst1
+and lst2 and returns a new list which forms a concatenation of lst1
+and lst2.
+
+(defun append2 (lst1 lst2)
+    (if (null lst1)
+        lst2
+        (cons (car lst1) (append2 (cdr lst1) lst2))))
+
+(print(append2 '(a b) '(c d)))
+
+; Recursive 3
+;Consider function sum which takes a list lst as its argument and returns
+the summation of its elements
+
+(defun sum (lst)
+    (cond ((null lst) 0)
+        (t (+ (car lst) (sum (cdr lst))))))
+
+(print(sum '(1 2 3 4)))
+
+; Recursive 4
+; Consider a function last2 which takes a list lst as its argument and
+returns the last element in the list.
+
+(defun last2 (lst)
+    (cond ((null lst) nil)
+        ((null (cdr lst)) (car lst))
+        (t (last2 (cdr lst)))))
+
+(print(last2'(a b c d)))
+
+; Recursive 5
+; Consider function reverse2 which takes a list as its argument and
+returns the reversed list.
+
+(defun reverse2 (lst)
+    (cond ((null lst) '())
+        (t (append (reverse2 (cdr lst)) (list (car lst))))))
+
+(print(reverse2 '(a b c d)))
+
+; Recursive 6
+; Consider a function called cube-list, which takes as argument a list of
+numbers and returns the same list with each element replaced with its
+cube.
+
+(defun cube-list (lst)
+    (cond ((null lst) nil)
+        (t (let ((elt (car lst)))
+                (cons (* elt elt elt)
+                      (cube-list (cdr lst)))))))
+
+(print(cube-list '(1 2 3 4)))
+
+; Recursive 7
+; Consider function interleave which takes two lists lst1 and lst2 as
+its arguments and returns a new list whose elements correspond to lists
+lst1 and lst2 interleaved, i.e. the first element is the from lst1, the
+second is from lst2, the third from lst1, etc.
+
+(defun interleave (lst1 lst2)
+    (cond ((null lst1) lst2)
+        ((null lst2) lst1)
+        (t (cons (car lst1)
+                 (cons (car lst2)
+                       (interleave (cdr lst1) (cdr lst2)))))))
+                
+(print(interleave '(a b c d) '(e f g h)))
+
+; Recursive 8
+; Consider function remove-first-occurrence which takes as
+arguments a list lst and an element elt, and returns lst with the first
+occurrence of elt removed.
+
+(defun remove-first-occurrence (lst elt)
+    (cond ((null lst) nil)
+        ((equal (car lst) elt) (cdr lst))
+        (t (cons (car lst)
+                 (remove-first-occurrence (cdr lst) elt)))))
+                           
+(print(remove-first-occurrence  '(a b c d) 'c))
+
+; Recursive 9
+; Consider function remove-all-occurrences which takes as arguments
+a list lst and an element elt, and returns lst with all occurrences of
+elt removed.
+
+(defun remove-all-occurrences (lst elt)
+    (if (null lst)
+        nil
+        (if (equal (car lst) elt)
+            (remove-all-occurrences (cdr lst) elt)
+            (cons (car lst) (remove-all-occurrences (cdr lst) elt)))))
+        
+(print(remove-all-occurrences '(a b  c c d) 'c))
+
+; Recursive 9
+; Consider function merge2 which takes as its arguments two sorted lists of
+non-repetitive numbers and returns a merged list with no redundancies.
+
