@@ -1,0 +1,8 @@
+(defun search (lst elt pos)
+    (if (equal (car lst) elt)
+        pos
+        (search (cdr lst) elt (+ 1 pos))))
+
+(defun linear-search (lst elt)
+    (search lst elt 1))
+   
