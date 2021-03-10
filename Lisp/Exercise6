@@ -182,5 +182,3 @@ lst1 and lst2 representing sets and returns the set difference.
         (t (cons (car lst1) (setdifference (cdr lst1) lst2)))))
         
 (print (setdifference '(a b c) '(a d e f)))
-
-
