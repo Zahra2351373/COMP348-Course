@@ -1,0 +1,22 @@
+(defun bubble (lst)
+    (cond ((or (null lst) (null (cdr lst))) lst)
+        (( < (car lst) (car (cdr lst)))
+         (cons (car lst) (bubble (cdr lst))))
+        ( t (cons (car (cdr lst))
+                  (bubble (cons (car lst) (cdr (cdr lst))))))))
+
+(print(bubble '(1 2  5 3 4)))
+
+(defun is-sortedp (lst)
+    (cond ((or (null lst) (null (cdr lst))) t)
+        ((< (car lst) (car (cdr lst))) (is-sortedp (cdr lst)))
+        (t nil)))
+
+(print(is-sortedp '(1 2  5 3 4)))
+
+(defun bubble-sort (lst)
+    (cond ((or (null lst) (null (cdr lst))) lst)
+        ((is-sortedp lst) lst)
+        (t (bubble-sort (bubble lst)))))
+
+(print(bubble-sort '(1 2  5 3 4)))
