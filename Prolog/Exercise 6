@@ -1,0 +1,29 @@
+flightPath(lax,nrt,12,5439).
+flightPath(cdg,lax,12,5656).
+flightPath(cdg,jfk,9,3624).
+flightPath(cdg,fco,2,684).
+flightPath(sin,nrt,7,3329).
+flightPath(lju,cdg,2,587).
+flightPath(lju,fco,1,193).
+flightPath(jfk,nrt,14,6729).
+flightPath(jfk,lax,6,2469).
+flightPath(fco,jfk,10,4266).
+flightPath(fco,sin,12,6425).
+transferTime(fco,6).
+transferTime(sin,4).
+transferTime(lju,5).
+transferTime(cdg,2).
+transferTime(jfk,7).
+transferTime(lax,1).
+transferTime(nrt,3).
+
+connection(Start,Destination) :-
+flightPath(Start,Destination,_,_);
+flightPath(Start,Transfer,_,_), flightPath(Transfer,Destination,_,_).
+
+flightTime(Start,Destination,FlightTime,[Destination]):-
+flightPath(Start,Destination,FlightTime,_).
+flightTime(Start,Destination,FlightTime,[TransferPoint|Destination2]) -:flightPath(Start,TransferPoint,FlightTime1,_),transferTime(TransferPoint,TransferTime),flightTime(TransferPoint,Destination,FlightTime2,Destination2),
+FlightTime is FlightTime1+TransferTime+FlightTime2 .
+
+pathLength(Path, Lentgh):- length(Path,Lentgh).
