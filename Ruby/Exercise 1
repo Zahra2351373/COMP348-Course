@@ -1,0 +1,7 @@
+puts "The Ruby language".length 
+puts "Ruby".index("y")
+puts -7.abs
+puts 10.49.round
+puts 10.51.round
+puts 2.next
+puts 97.chr
