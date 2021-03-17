@@ -5,3 +5,11 @@ puts 10.49.round
 puts 10.51.round
 puts 2.next
 puts 97.chr
+
+a = b = 1 + 2 + 3
+puts a 
+puts b 
+a = (b = 1 + 2) + 3
+puts a 
+puts b 
+
