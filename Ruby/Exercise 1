@@ -13,3 +13,16 @@ a = (b = 1 + 2) + 3
 puts a 
 puts b 
 
+a = 1
+b = 2
+a, b = b, a
+puts a
+puts b 
+
+x = 0
+a, b, c = x, (x += 1), (x += 1)
+puts a 
+puts b 
+puts c 
+puts x 
+
