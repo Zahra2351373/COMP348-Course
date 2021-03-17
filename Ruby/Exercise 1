@@ -26,3 +26,8 @@ puts b
 puts c 
 puts x 
 
+a = [ "number", 1, 2, 3.14 ]
+puts a[0]
+a[3] = nil
+puts a
+
