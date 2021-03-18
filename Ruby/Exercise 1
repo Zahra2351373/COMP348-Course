@@ -49,9 +49,3 @@ b[1] = "new"
 b[2] = "array"
 puts b
 
-biblio = { "nabokov89a" => "Pnin",
-"bulgakov96" => "The master and margarita",
-"nabokov89b" => "Invitation to a Beheading",
-"nabokov90" => "The defense",
-"kafka95" => "The trial" }
-puts biblio.length 
