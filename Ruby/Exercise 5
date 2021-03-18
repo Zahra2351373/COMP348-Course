@@ -1,0 +1,12 @@
+def setx (x)
+    @x = x
+end
+def sety (y)
+    @y = y
+end
+def getx
+    @x
+end
+def gety
+    @y
+end
