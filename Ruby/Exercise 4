@@ -1,0 +1,16 @@
+class Coordinate
+    @@total = 0
+    def initialize (x, y)
+        @@total += 1
+        @x = x
+        @y = y
+    end
+    def to_s
+        return "(#@x, #@y)"
+    end
+    def Coordinate.total
+        return "Number of coordinates: #@@total"
+    end
+end
+
+
