@@ -1,0 +1,11 @@
+3.times { |count| puts count} 
+puts "\n\n"
+1.upto(10) { |count| puts count } 
+puts "\n\n"
+10.downto(1) { |count| puts count } 
+puts "\n\n"
+0.step(10,2) { |count| puts count } 
+puts "\n\n"
+for element in ['a', 'b', 'c']
+puts element
+end
