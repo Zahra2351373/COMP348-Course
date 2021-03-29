@@ -18,3 +18,13 @@ case number
     else
         puts "Number is out of range."
 end
+
+#Another example
+case number
+    when 0..5
+        puts "Between 0 and 5"
+    when 6..10
+        puts "Between 6 and 10"
+    else
+        puts "Number is out of range."
+end
