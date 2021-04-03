@@ -1,0 +1,53 @@
+puts "Hello World!"
+puts "This is the first tutorial in ruby"
+
+def welcome(name)
+    puts "Hi #{name}"
+end 
+
+welcome "Zahra"
+
+def multiply(a,b)
+    return a*b
+end
+
+print multiply(2,3)
+
+puts "\n"
+
+def test1(a=1, b=2,c=a+b)
+    puts "#{a} , #{b} , #{c}"
+end
+puts test1
+puts test1 12
+puts test1 12,13
+puts test1 12,13,1
+
+class Box
+    def initialize(w,h)
+        @width,@height=w,h
+    end
+    
+    def printwidth
+        @width
+    end
+    
+    def printheight
+        @height
+    end
+    
+    def setwidth(value)
+        @width=value
+    end
+    
+    def setheight(value)
+        @height=value
+    end
+end
+
+box=Box.new(10,20)
+x=box.printwidth
+y=box.printheight
+
+puts "width of the new box is #{x}"
+puts "height of the new box is #{y}"
